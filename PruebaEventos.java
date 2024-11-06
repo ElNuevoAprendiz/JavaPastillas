@@ -27,7 +27,8 @@ class MarcoBotones extends JFrame{
     
 }
 
-class LaminaBotones extends JPanel implements ActionListener{
+class LaminaBotones extends JPanel{
+
     JButton boton = new JButton("Boton Azul");
     JButton boton2 = new JButton("Boton Amarillo");
     JButton boton3 = new JButton("Boton Rojo");
@@ -37,11 +38,31 @@ class LaminaBotones extends JPanel implements ActionListener{
         add(boton2);
         add(boton3);
 
-        boton.addActionListener(this);
-        boton2.addActionListener(this);
-        boton3.addActionListener(this);
+        ColorFondo amarillo = new ColorFondo(Color.YELLOW);
+        ColorFondo azul = new ColorFondo(Color.BLUE);
+        ColorFondo rojo = new ColorFondo(Color.RED);
+
+
+        boton.addActionListener(azul);
+        boton2.addActionListener(amarillo);
+        boton3.addActionListener(rojo);
     }
 
+    private class ColorFondo implements ActionListener{ //Clase interna ver minuto 8 video 67
+
+        private Color colorFondo;
+
+        public ColorFondo(Color c){
+            colorFondo=c;
+        
+        }
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            setBackground(colorFondo);
+        }
+
+    }
+    /*
     public void actionPerformed(ActionEvent e){
 
         Object botonPulsado = e.getSource();
@@ -55,7 +76,9 @@ class LaminaBotones extends JPanel implements ActionListener{
         }else{
             setBackground(Color.RED);
         }
-        
+        */
     }
 
-}
+
+
+
