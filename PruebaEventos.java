@@ -1,3 +1,5 @@
+/*En este programa se practican los eventos de raton a traves de la interface ActionListener */
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
