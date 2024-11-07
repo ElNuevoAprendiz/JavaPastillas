@@ -79,7 +79,7 @@ class LaminaBotones extends JPanel{
             setBackground(Color.RED);
         }
         */
-    }
+}
 
 
 
